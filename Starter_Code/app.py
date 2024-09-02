@@ -8,20 +8,20 @@ from sqlalchemy.ext.automap import automap_base
 from datetime import datetime as dt
 from flask import Flask, jsonify
 
+
 #################################################
 # Database Setup
 #################################################
 
-#engine = create_engine("sqlite:///Resources/hawaii.sqlite")
-engine = create_engine("sqlite:///hawaii.sqlite")
+engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 
 # reflect an existing database into a new model
 Base = automap_base()
-Base.prepare(engine, reflect=True)
 
 # reflect the tables
+Base.prepare(engine, reflect=True)
+
 # Save references to each table
-# Save references to the tables
 Measurement = Base.classes.measurement
 Station = Base.classes.station
 
